@@ -74,7 +74,6 @@ var I18N = {
     exp2_b3: "Integrated the optimised operators into the company's in-house framework, matching or exceeding official CUDA performance, and delivered reports for the AI chip SDK operator library.",
 
     h_pub: 'Publications',
-    pub_hint: '<span class="me">Bold</span> indicates first authorship. Citation counts are refreshed automatically from Google Scholar.',
     f_all: 'All', f_first: 'First-author only',
     l_paper: 'Paper', l_code: 'Code',
 
@@ -156,7 +155,6 @@ var I18N = {
     exp2_b3: '将优化后的算子集成入企业自研深度学习框架，性能达到或超过官方 CUDA 版本，并输出算子库性能报告。',
 
     h_pub: '发表论文',
-    pub_hint: '<span class="me">加粗</span>表示本人为第一作者，引用数据每日自动同步自谷歌学术。',
     f_all: '全部', f_first: '仅看一作',
     l_paper: '论文', l_code: '代码',
 
