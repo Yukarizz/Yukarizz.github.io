@@ -48,6 +48,10 @@ git push origin main
 
 推送后 GitHub Pages 约 1–2 分钟生效。
 
+> **第一次使用前**：本仓库最初是通过 GitHub API 上传文件的，提交历史与本机不同源，
+> 直接 `deploy.bat` 会被拒绝（non-fast-forward）。先双击一次 **`sync-first.bat`** 完成对齐
+> （脚本会先校验两端文件一致再执行），之后就再也不用管它，可以删掉。
+
 > 首次在新机器上推送需要 GitHub 认证：用户名填 `Yukarizz`，
 > 密码填 **Personal Access Token**（不是登录密码）。
 > 生成入口：GitHub → Settings → Developer settings → Personal access tokens。
