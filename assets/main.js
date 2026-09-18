@@ -57,7 +57,7 @@
   spy();
 
   /* ---- live citation data ----
-     GitHub Actions 每天抓取引用数据，写入 scholar-data 分支的 data/scholar.json，
+     GitHub Actions 每周抓取引用数据，写入 scholar-data 分支的 data/scholar.json，
      这里拉取后更新页面数字。拉取失败就沿用页面里写死的数值，不影响展示。 */
   var DATA_URL = 'https://raw.githubusercontent.com/Yukarizz/Yukarizz.github.io/'
                + 'scholar-data/data/scholar.json';
