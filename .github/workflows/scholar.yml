@@ -1,0 +1,53 @@
+name: Sync citation data
+
+on:
+  schedule:
+    # 每天 UTC 02:23（北京时间 10:23）自动跑一次
+    - cron: '23 2 * * *'
+  workflow_dispatch:      # 允许在 Actions 页面手动点一次
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - scripts/update_scholar.py
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install "scholarly<2" "bibtexparser==1.4.3"
+
+      - name: Fetch citation data
+        env:
+          GOOGLE_SCHOLAR_ID: 9XxYjFYAAAAJ
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: python scripts/update_scholar.py
+
+      - name: Publish scholar.json to scholar-data branch
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin scholar-data >/dev/null 2>&1; then
+            git fetch origin scholar-data
+            git checkout -B scholar-data origin/scholar-data
+          else
+            git checkout --orphan scholar-data
+            git rm -rf --cached . >/dev/null 2>&1 || true
+          fi
+          mkdir -p data
+          git add -f data/scholar.json
+          git commit -m "chore(scholar): update citation data" || echo "no change"
+          git push origin scholar-data
