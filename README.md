@@ -124,9 +124,13 @@ python -m http.server 8000
 | 教育 / 实习经历 | `<section id="education">` / `<section id="experience">` |
 | 配色 | `assets/style.css` 顶部 `:root` 的 CSS 变量 |
 | 添加/修改双语文案 | 同时改 `index.html` 里的元素和 `assets/i18n.js` 的 `I18N.en` / `I18N.zh` 字典 |
+| 顶部按钮 | `index.html` 的 `<div class="buttons">`；次级样式用 `.btn ghost`（CSS 里保留了注释说明） |
 | 换默认语言 | `assets/i18n.js` 的 `pickInitial()`，把 `indexOf('zh') === 0 ? 'zh' : 'en'` 改成固定值 |
 
 ## 待办
 
-- [ ] `Academic Service` 一节的审稿经历目前是按发表期刊推测填写的，需核实或删除
+- [ ] **以后入职高校再加「学院主页」按钮**：在 `index.html` 的 `<div class="buttons">` 里加
+      `<a class="btn ghost" href="学校主页 URL" target="_blank" rel="noopener" data-i18n="btn_inst">Institution Page</a>`，
+      并在 `assets/i18n.js` 的 `I18N.en` / `I18N.zh` 两处补 `btn_inst` 词条（中文：`学院主页`）。
+      CSS 样式已保留，加回来即可用。
 - [ ] 若要自定义域名，在仓库根目录加 `CNAME` 文件（内容为域名）
