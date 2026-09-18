@@ -65,11 +65,11 @@ git push origin main
 **机制**
 
 ```
-GitHub Actions 每天 UTC 02:23
+GitHub Actions 每周一 UTC 02:23（北京时间周一 10:23）
   └─ scripts/update_scholar.py 抓数据
-       ├─ 1. SerpApi（若配了 SERPAPI_KEY 密钥）  ← 真正的 Google Scholar
-       ├─ 2. Google Scholar 直抓（scholarly）     ← 真正的 Google Scholar
-       ├─ 3. scripts/scholar-baseline.json        ← 人工核实的 Scholar 数值
+       ├─ 1. SerpApi  ✅ 已配置 SERPAPI_KEY          ← 真正的 Google Scholar
+       ├─ 2. Google Scholar 直抓（scholarly）        ← 真正的 Google Scholar
+       ├─ 3. scripts/scholar-baseline.json           ← 人工核实的 Scholar 数值（后备）
        └─ 4. Semantic Scholar / Crossref（兜底，口径与 Scholar 不同）
   └─ 写入 scholar-data 分支的 data/scholar.json
        └─ 页面 JS 拉取该文件 → 刷新页面上的数字
@@ -77,21 +77,23 @@ GitHub Actions 每天 UTC 02:23
 
 抓不到时**保留旧值不覆盖**，页面则沿用 HTML 里写死的数值，不会显示错误数字。
 
-### 为什么需要 baseline 这个文件
+### 关于 SerpApi（当前方案）
 
-Google Scholar 没有官方 API，而 GitHub Actions 的服务器 IP 直连 `scholar.google.com`
-**会被拦截**（实测：本机和 Actions 都不行）。兜底源 Semantic Scholar 收录范围更窄，
-算出来的数明显偏小（255 vs 186）——直接显示会跟你的 Scholar 主页对不上。
+Google Scholar 没有官方 API，GitHub Actions 的服务器 IP 直连 `scholar.google.com`
+**会被拦截**（本机和 Actions 实测都不行）。目前通过 [SerpApi](https://serpapi.com) 的
+Google Scholar Author 接口抓取，**数据源标记 `google-scholar(serpapi)`，
+数字与 Scholar 主页完全一致**。
 
-所以加了一份 **`scripts/scholar-baseline.json`**：人工核实的 Scholar 数值。
-抓不到 Scholar 时以它为准，保证主页数字与 Scholar 一致。
+密钥存在仓库 **Settings → Secrets → Actions → `SERPAPI_KEY`**，不会出现在代码里。
 
-**两种维护方式，二选一：**
+**频次为什么是一周一次**：SerpApi 免费额度有限（约 100 次/月），一周一次约消耗 4 次/月，
+足够且不超限。想改频次编辑 `.github/workflows/scholar.yml` 的 `cron` 即可。
 
-| 方式 | 做法 | 效果 |
-| --- | --- | --- |
-| 全自动（推荐） | [SerpApi](https://serpapi.com) 注册拿 Key → 仓库 Settings → Secrets → Actions，加 `SERPAPI_KEY` | 每天自动抓真实 Scholar，不用再管 baseline |
-| 手动 | 每隔一段时间打开自己的 Scholar 主页，改 `scripts/scholar-baseline.json` 里的 `citations` / `hindex` / `i10index` 和逐篇数字 | 改完提交即可，下次定时任务自动读取 |
+### 关于 baseline（后备）
+
+`scripts/scholar-baseline.json` 是人工核实的 Scholar 数值，**仅当 SerpApi 失败或额度用尽时**才启用。
+配好 SerpApi 后平时不用管；如果发现页面的数字长期不涨、且来源标签没显示 Google Scholar，
+说明 SerpApi 可能失效了，这时可以手动更新 baseline 顶上。
 
 **其他需要动手的情况：**
 
