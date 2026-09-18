@@ -1,3 +1,6 @@
+# 引用数据由 GitHub Actions 写入 scholar-data 分支，不进 main
+data/
+
 .DS_Store
 Thumbs.db
 *.log
@@ -5,3 +8,4 @@ Thumbs.db
 .vscode/
 .idea/
 node_modules/
+__pycache__/
