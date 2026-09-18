@@ -72,7 +72,9 @@
     setText('m-citations', data.citations);
     setText('m-hindex', data.hindex);
     setText('m-i10index', data.i10index);
-    if (data.papers) setText('m-pubcount', Object.keys(data.papers).length);
+    // 论文数始终以页面实际列出的条目为准：
+    // scholar.json 只统计「抓到引用数据的」论文，会漏掉新发表还没被引用的，不能拿来当总数
+    setText('m-pubcount', pubs.length);
 
     pubs.forEach(function (p) {
       var doi = p.getAttribute('data-doi');
@@ -93,8 +95,7 @@
     var note = document.getElementById('cite-note');
     if (note && data.updated) {
       var d = data.updated.slice(0, 10);
-      var src = data.source === 'google-scholar' ? 'Google Scholar'
-              : (data.source || '').indexOf('serpapi') > -1 ? 'Google Scholar'
+      var src = (data.source || '').indexOf('google-scholar') > -1 ? 'Google Scholar'
               : data.source === 'semantic-scholar' ? 'Semantic Scholar'
               : data.source === 'crossref' ? 'Crossref' : data.source;
       var txt = 'Citation data: ' + src + ' · updated ' + d;
