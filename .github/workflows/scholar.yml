@@ -39,6 +39,9 @@ jobs:
       - name: Publish scholar.json to scholar-data branch
         run: |
           set -e
+          # 先把本次生成的数据存起来：切换到 scholar-data 分支会覆盖被跟踪的
+          # data/scholar.json（旧版本），必须先备份，否则提交时永远是 "no change"
+          cp data/scholar.json /tmp/scholar.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if git ls-remote --exit-code --heads origin scholar-data >/dev/null 2>&1; then
@@ -49,6 +52,11 @@ jobs:
             git rm -rf --cached . >/dev/null 2>&1 || true
           fi
           mkdir -p data
+          cp /tmp/scholar.json data/scholar.json
           git add -f data/scholar.json
-          git commit -m "chore(scholar): update citation data" || echo "no change"
-          git push origin scholar-data
+          if git diff --cached --quiet; then
+            echo "[i] 数据无变化，跳过提交"
+          else
+            git commit -m "chore(scholar): update citation data"
+            git push origin scholar-data
+          fi
