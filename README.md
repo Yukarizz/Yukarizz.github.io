@@ -18,6 +18,7 @@ F:\GitHomePage\
 │   └── i18n.js                 # 中英文文案字典与切换逻辑
 ├── .github/workflows/scholar.yml  # 每天自动抓取引用数据
 ├── scripts/update_scholar.py      # 抓取脚本
+├── scripts/scholar-baseline.json  # 人工核实的 Google Scholar 数值（抓不到 Scholar 时为准）
 ├── files/
 │   └── Zeyang-Zhang-CV.pdf     # 简历，供页面 CV 按钮下载
 ├── img/
@@ -66,26 +67,38 @@ git push origin main
 ```
 GitHub Actions 每天 UTC 02:23
   └─ scripts/update_scholar.py 抓数据
-       ├─ 1. SerpApi（若配了 SERPAPI_KEY 密钥）
-       ├─ 2. Google Scholar 直抓（scholarly）
-       ├─ 3. Semantic Scholar 批量接口（按 DOI）
-       └─ 4. Crossref（兜底）
+       ├─ 1. SerpApi（若配了 SERPAPI_KEY 密钥）  ← 真正的 Google Scholar
+       ├─ 2. Google Scholar 直抓（scholarly）     ← 真正的 Google Scholar
+       ├─ 3. scripts/scholar-baseline.json        ← 人工核实的 Scholar 数值
+       └─ 4. Semantic Scholar / Crossref（兜底，口径与 Scholar 不同）
   └─ 写入 scholar-data 分支的 data/scholar.json
        └─ 页面 JS 拉取该文件 → 刷新页面上的数字
 ```
 
 抓不到时**保留旧值不覆盖**，页面则沿用 HTML 里写死的数值，不会显示错误数字。
 
-**日常不用管。** 只有两种情况需要动手：
+### 为什么需要 baseline 这个文件
+
+Google Scholar 没有官方 API，而 GitHub Actions 的服务器 IP 直连 `scholar.google.com`
+**会被拦截**（实测：本机和 Actions 都不行）。兜底源 Semantic Scholar 收录范围更窄，
+算出来的数明显偏小（255 vs 186）——直接显示会跟你的 Scholar 主页对不上。
+
+所以加了一份 **`scripts/scholar-baseline.json`**：人工核实的 Scholar 数值。
+抓不到 Scholar 时以它为准，保证主页数字与 Scholar 一致。
+
+**两种维护方式，二选一：**
+
+| 方式 | 做法 | 效果 |
+| --- | --- | --- |
+| 全自动（推荐） | [SerpApi](https://serpapi.com) 注册拿 Key → 仓库 Settings → Secrets → Actions，加 `SERPAPI_KEY` | 每天自动抓真实 Scholar，不用再管 baseline |
+| 手动 | 每隔一段时间打开自己的 Scholar 主页，改 `scripts/scholar-baseline.json` 里的 `citations` / `hindex` / `i10index` 和逐篇数字 | 改完提交即可，下次定时任务自动读取 |
+
+**其他需要动手的情况：**
 
 1. **新增论文** —— 在 `index.html` 的 `<li class="pub">` 上加 `data-doi="10.xxxx/xxx"`。
-   脚本会自动从 `index.html` 解析论文列表，不用改脚本。
-2. **想让数据严格等于谷歌学术** —— Scholar 直抓偶尔会被拦。此时去
-   [SerpApi](https://serpapi.com) 注册（免费额度够用），把 API Key 加到
-   仓库 **Settings → Secrets → Actions → New repository secret**，名称 `SERPAPI_KEY`。
-   之后脚本会优先用它，拿到的数据与 Scholar 完全一致。
-
-想立刻刷新一次：仓库 **Actions → Sync citation data → Run workflow**。
+   脚本会自动从 `index.html` 解析论文列表，不用改脚本。论文总数始终按页面实际条目算，
+   不会因为某篇还没被引用就漏掉。
+2. **立刻刷新一次** —— 仓库 **Actions → Sync citation data → Run workflow**。
 
 ## 本地预览
 
