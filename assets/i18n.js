@@ -15,7 +15,7 @@ var I18N = {
     m_cit: 'Citations', m_h: 'h-index', m_i10: 'i10-index', m_pub: 'Publications',
 
     nav_about: 'About', nav_news: 'News', nav_edu: 'Education', nav_exp: 'Experience',
-    nav_pub: 'Publications', nav_svc: 'Service', nav_award: 'Awards', nav_skill: 'Skills',
+    nav_pub: 'Publications', nav_svc: 'Service', nav_award: 'Awards',
     lang_btn: '中文',
 
     h_about: 'About',
@@ -87,11 +87,6 @@ var I18N = {
     aw4: '<b>IoT Engineer Certificate</b>',
     aw5: '<b>National Computer Rank Examination, Level 2</b>',
 
-    h_skill: 'Skills',
-    sk1_h: 'Languages', sk1_p: 'Python, C++ / CUDA, MATLAB',
-    sk2_h: 'Frameworks & Tools', sk2_p: 'PyTorch, Pandas, OpenCV, LangChain, LangGraph, Milvus, LLaMA-Factory',
-    sk3_h: 'Research Topics', sk3_p: 'Multimodal fusion, Diffusion Models, Transformer, CNN, Saliency Detection',
-
     footer: 'Last updated: September 2026 &middot; Built with plain HTML/CSS'
   },
 
@@ -104,7 +99,7 @@ var I18N = {
     m_cit: '被引次数', m_h: 'h 指数', m_i10: 'i10 指数', m_pub: '论文数',
 
     nav_about: '个人简介', nav_news: '最新动态', nav_edu: '教育经历', nav_exp: '实习经历',
-    nav_pub: '发表论文', nav_svc: '学术服务', nav_award: '荣誉奖项', nav_skill: '技能',
+    nav_pub: '发表论文', nav_svc: '学术服务', nav_award: '荣誉奖项',
     lang_btn: 'EN',
 
     h_about: '个人简介',
@@ -167,11 +162,6 @@ var I18N = {
     aw3: '<b>大学英语四级 / 六级（CET-4 / CET-6）</b>',
     aw4: '<b>物联网工程师证书</b>',
     aw5: '<b>全国计算机等级考试二级</b>',
-
-    h_skill: '技能',
-    sk1_h: '编程语言', sk1_p: 'Python、C++ / CUDA、MATLAB',
-    sk2_h: '框架与工具', sk2_p: 'PyTorch、Pandas、OpenCV、LangChain、LangGraph、Milvus、LLaMA-Factory',
-    sk3_h: '研究方向', sk3_p: '多模态融合、扩散模型、Transformer、CNN、显著性检测',
 
     footer: '最后更新：2026 年 9 月 &middot; 纯 HTML/CSS 构建'
   }
