@@ -19,49 +19,52 @@
     </div>
     <div class="hero-info">
       <h1>Zeyang Zhang <span class="zh">张泽阳</span></h1>
-      <p class="role">Ph.D. Candidate in Software Engineering</p>
+      <p class="role" data-i18n="role">Ph.D. Candidate in Software Engineering</p>
       <p class="affil">
-        School of Artificial Intelligence and Computer Science<br />
-        Jiangnan University, Wuxi, Jiangsu, China
+        <span data-i18n="affil1">School of Artificial Intelligence and Computer Science</span><br />
+        <span data-i18n="affil2">Jiangnan University, Wuxi, Jiangsu, China</span>
       </p>
       <p class="contact">
-        <span>E-mail: <a href="mailto:zzy_jnu_cv@163.com">zzy_jnu_cv@163.com</a></span>
+        <span><span data-i18n="ct_email">E-mail</span>: <a href="mailto:zzy_jnu_cv@163.com">zzy_jnu_cv@163.com</a></span>
         <span class="sep">|</span>
-        <span>Tel: +86 189 6184 1737</span>
+        <span><span data-i18n="ct_tel">Tel</span>: +86 189 6184 1737</span>
       </p>
       <div class="links">
         <a class="btn" href="https://scholar.google.com/citations?user=9XxYjFYAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
         <a class="btn" href="https://github.com/Yukarizz" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="files/Zeyang-Zhang-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
-        <a class="btn ghost" href="https://ai.jiangnan.edu.cn" target="_blank" rel="noopener">Institution Page</a>
+        <a class="btn" href="files/Zeyang-Zhang-CV.pdf" target="_blank" rel="noopener" data-i18n="btn_cv">CV (PDF)</a>
+        <a class="btn ghost" href="https://ai.jiangnan.edu.cn" target="_blank" rel="noopener" data-i18n="btn_inst">Institution Page</a>
       </div>
       <div class="metrics">
-        <div class="metric"><b>255</b><span>Citations</span></div>
-        <div class="metric"><b>6</b><span>h-index</span></div>
-        <div class="metric"><b>4</b><span>i10-index</span></div>
-        <div class="metric"><b>10</b><span>Publications</span></div>
+        <div class="metric"><b id="m-citations">255</b><span data-i18n="m_cit">Citations</span></div>
+        <div class="metric"><b id="m-hindex">6</b><span data-i18n="m_h">h-index</span></div>
+        <div class="metric"><b id="m-i10index">4</b><span data-i18n="m_i10">i10-index</span></div>
+        <div class="metric"><b id="m-pubcount">10</b><span data-i18n="m_pub">Publications</span></div>
       </div>
     </div>
   </header>
 
   <!-- ================= NAV ================= -->
   <nav class="toc" id="toc">
-    <a href="#about">About</a>
-    <a href="#news">News</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#publications">Publications</a>
-    <a href="#talks">Service</a>
-    <a href="#awards">Awards</a>
-    <a href="#skills">Skills</a>
+    <a href="#about" data-i18n="nav_about">About</a>
+    <a href="#news" data-i18n="nav_news">News</a>
+    <a href="#education" data-i18n="nav_edu">Education</a>
+    <a href="#experience" data-i18n="nav_exp">Experience</a>
+    <a href="#publications" data-i18n="nav_pub">Publications</a>
+    <a href="#talks" data-i18n="nav_svc">Service</a>
+    <a href="#awards" data-i18n="nav_award">Awards</a>
+    <a href="#skills" data-i18n="nav_skill">Skills</a>
+    <span class="toc-right">
+      <button type="button" class="langbtn" id="lang-toggle" data-i18n="lang_btn">中文</button>
+    </span>
   </nav>
 
   <main>
 
     <!-- ================= ABOUT ================= -->
     <section id="about">
-      <h2>About</h2>
-      <p>
+      <h2 data-i18n="h_about">About</h2>
+      <p data-i18n-html="about_p1">
         I am a Ph.D. candidate in Software Engineering at the
         <strong>School of Artificial Intelligence and Computer Science, Jiangnan University</strong>,
         Wuxi, China, working in the multimodal group of <strong>Prof. Xiao-Jun Wu</strong> and
@@ -69,7 +72,7 @@
         student at the Centre for Vision, Speech and Signal Processing (CVSSP),
         <strong>University of Surrey</strong>, United Kingdom.
       </p>
-      <p>
+      <p data-i18n-html="about_p2">
         My research centres on <strong>multimodal image fusion</strong> with an emphasis on
         robustness in complex environments — in particular, addressing the severe performance
         degradation that existing fusion methods suffer under adverse weather conditions. My work
@@ -78,60 +81,60 @@
         including fine-tuning and application deployment.
       </p>
       <div class="chips">
-        <span class="chip">Multimodal Image Fusion</span>
-        <span class="chip">Infrared–Visible Fusion</span>
-        <span class="chip">Image Registration</span>
-        <span class="chip">Diffusion Models</span>
-        <span class="chip">Transformers</span>
-        <span class="chip">CNNs</span>
-        <span class="chip">Saliency Detection</span>
-        <span class="chip">Adverse Weather Restoration</span>
-        <span class="chip">Efficient Deployment</span>
+        <span class="chip" data-i18n="chip1">Multimodal Image Fusion</span>
+        <span class="chip" data-i18n="chip2">Infrared–Visible Fusion</span>
+        <span class="chip" data-i18n="chip3">Image Registration</span>
+        <span class="chip" data-i18n="chip4">Diffusion Models</span>
+        <span class="chip" data-i18n="chip5">Transformers</span>
+        <span class="chip" data-i18n="chip6">CNNs</span>
+        <span class="chip" data-i18n="chip7">Saliency Detection</span>
+        <span class="chip" data-i18n="chip8">Adverse Weather Restoration</span>
+        <span class="chip" data-i18n="chip9">Efficient Deployment</span>
       </div>
     </section>
 
     <!-- ================= NEWS ================= -->
     <section id="news">
-      <h2>News</h2>
+      <h2 data-i18n="h_news">News</h2>
       <ul class="news">
-        <li><span class="date">Sep 2026</span> Two first-author papers published in <em>IEEE Transactions on Multimedia</em> and the <em>International Journal of Computer Vision</em>.</li>
-        <li><span class="date">Mar 2026</span> Joined <strong>Bosch (China) Investment Ltd.</strong> (CR-RIX/AP) as a Strategic Intern on end-to-end autonomous driving.</li>
-        <li><span class="date">2025</span> Awarded the <strong>CSC National Scholarship</strong> for joint Ph.D. training at the University of Surrey.</li>
-        <li><span class="date">2025</span> <em>DDBFusion</em> published in <em>Information Fusion</em> (SCI Q1 Top, IF 14.7).</li>
-        <li><span class="date">2025</span> <em>One Model for All</em> accepted at <strong>CVPR 2025</strong>.</li>
+        <li><span class="date">Sep 2026</span> <span data-i18n-html="news1">Two first-author papers published in <em>IEEE Transactions on Multimedia</em> and the <em>International Journal of Computer Vision</em>.</span></li>
+        <li><span class="date">Mar 2026</span> <span data-i18n-html="news2">Joined <strong>Bosch (China) Investment Ltd.</strong> (CR-RIX/AP) as a Strategic Intern on end-to-end autonomous driving.</span></li>
+        <li><span class="date">2025</span> <span data-i18n-html="news3">Awarded the <strong>CSC National Scholarship</strong> for joint Ph.D. training at the University of Surrey.</span></li>
+        <li><span class="date">2025</span> <span data-i18n-html="news4"><em>DDBFusion</em> published in <em>Information Fusion</em> (SCI Q1 Top, IF 14.7).</span></li>
+        <li><span class="date">2025</span> <span data-i18n-html="news5"><em>One Model for All</em> accepted at <strong>CVPR 2025</strong>.</span></li>
       </ul>
     </section>
 
     <!-- ================= EDUCATION ================= -->
     <section id="education">
-      <h2>Education</h2>
+      <h2 data-i18n="h_edu">Education</h2>
       <div class="timeline">
         <div class="entry">
           <div class="when">2025 – 2026</div>
           <div class="what">
-            <div class="title">Visiting Ph.D. Student (CSC Joint Training), Pattern Recognition</div>
-            <div class="sub">University of Surrey, Guildford, United Kingdom</div>
+            <div class="title" data-i18n="edu1_t">Visiting Ph.D. Student (CSC Joint Training), Pattern Recognition</div>
+            <div class="sub" data-i18n="edu1_s">University of Surrey, Guildford, United Kingdom</div>
           </div>
         </div>
         <div class="entry">
           <div class="when">2023 – 2027</div>
           <div class="what">
-            <div class="title">Ph.D. in Software Engineering</div>
-            <div class="sub">Jiangnan University, Wuxi, China</div>
+            <div class="title" data-i18n="edu2_t">Ph.D. in Software Engineering</div>
+            <div class="sub" data-i18n="edu2_s">Jiangnan University, Wuxi, China</div>
           </div>
         </div>
         <div class="entry">
           <div class="when">2021 – 2023</div>
           <div class="what">
-            <div class="title">M.S. in Computer Science <span class="tag">transferred to Ph.D. programme</span></div>
-            <div class="sub">Jiangnan University, Wuxi, China</div>
+            <div class="title"><span data-i18n="edu3_t">M.S. in Computer Science</span> <span class="tag" data-i18n="edu3_tag">transferred to Ph.D. programme</span></div>
+            <div class="sub" data-i18n="edu3_s">Jiangnan University, Wuxi, China</div>
           </div>
         </div>
         <div class="entry">
           <div class="when">2017 – 2021</div>
           <div class="what">
-            <div class="title">B.Eng. in Internet of Things Engineering</div>
-            <div class="sub">Jingling Institute of Technology, Nanjing, China</div>
+            <div class="title" data-i18n="edu4_t">B.Eng. in Internet of Things Engineering</div>
+            <div class="sub" data-i18n="edu4_s">Jingling Institute of Technology, Nanjing, China</div>
           </div>
         </div>
       </div>
@@ -139,30 +142,30 @@
 
     <!-- ================= EXPERIENCE ================= -->
     <section id="experience">
-      <h2>Experience</h2>
+      <h2 data-i18n="h_exp">Experience</h2>
       <div class="timeline">
         <div class="entry">
           <div class="when">Mar 2026 – Sep 2026</div>
           <div class="what">
-            <div class="title">Strategic Intern, Autonomous Driving <span class="tag">CR-RIX/AP</span></div>
-            <div class="sub">Bosch (China) Investment Ltd., China</div>
+            <div class="title"><span data-i18n="exp1_t">Strategic Intern, Autonomous Driving</span> <span class="tag">CR-RIX/AP</span></div>
+            <div class="sub" data-i18n="exp1_s">Bosch (China) Investment Ltd., China</div>
             <ul class="bullets">
-              <li>Pre-research on end-to-end autonomous driving algorithms.</li>
-              <li>Optimised the perception backbone of <em>DiffusionDrive</em>; designed multi-scale BEV perception with a sparse refined feature-extraction strategy.</li>
-              <li>Used a Vision Transformer to dynamically select key spatial features and Register Tokens for trajectory prediction, removing the computational redundancy of high-resolution feature fusion.</li>
-              <li>Achieved a competitive PDMS score on the NAVSIM vision-only closed-loop benchmark while preserving real-time inference.</li>
+              <li data-i18n-html="exp1_b1">Pre-research on end-to-end autonomous driving algorithms.</li>
+              <li data-i18n-html="exp1_b2">Optimised the perception backbone of <em>DiffusionDrive</em>; designed multi-scale BEV perception with a sparse refined feature-extraction strategy.</li>
+              <li data-i18n-html="exp1_b3">Used a Vision Transformer to dynamically select key spatial features and Register Tokens for trajectory prediction, removing the computational redundancy of high-resolution feature fusion.</li>
+              <li data-i18n-html="exp1_b4">Achieved a competitive PDMS score on the NAVSIM vision-only closed-loop benchmark while preserving real-time inference.</li>
             </ul>
           </div>
         </div>
         <div class="entry">
           <div class="when">Jun 2023 – Dec 2023</div>
           <div class="what">
-            <div class="title">Deep Learning Framework Engineer</div>
-            <div class="sub">National Supercomputing Center, Wuxi, China</div>
+            <div class="title" data-i18n="exp2_t">Deep Learning Framework Engineer</div>
+            <div class="sub" data-i18n="exp2_s">National Supercomputing Center, Wuxi, China</div>
             <ul class="bullets">
-              <li>Ported and optimised PyTorch operators onto an in-house AI chip in <em>C++/CUDA</em>.</li>
-              <li>Decomposed and scheduled computation graphs for multi-thread / multi-stream parallel execution; reduced memory-access latency through shared-memory and register reuse.</li>
-              <li>Integrated the optimised operators into the company's in-house framework, matching or exceeding official CUDA performance, and delivered reports for the AI chip SDK operator library.</li>
+              <li data-i18n-html="exp2_b1">Ported and optimised PyTorch operators onto an in-house AI chip in <em>C++/CUDA</em>.</li>
+              <li data-i18n-html="exp2_b2">Decomposed and scheduled computation graphs for multi-thread / multi-stream parallel execution; reduced memory-access latency through shared-memory and register reuse.</li>
+              <li data-i18n-html="exp2_b3">Integrated the optimised operators into the company's in-house framework, matching or exceeding official CUDA performance, and delivered reports for the AI chip SDK operator library.</li>
             </ul>
           </div>
         </div>
@@ -171,109 +174,125 @@
 
     <!-- ================= PUBLICATIONS ================= -->
     <section id="publications">
-      <h2>Publications</h2>
-      <p class="hint">
-        <span class="me">Bold</span> indicates first authorship. Citation counts follow Google Scholar.
+      <h2 data-i18n="h_pub">Publications</h2>
+      <p class="hint" data-i18n-html="pub_hint">
+        <span class="me">Bold</span> indicates first authorship.
+        Citation counts are refreshed automatically from Google Scholar.
       </p>
+      <p class="hint" id="cite-note"></p>
 
       <div class="filters">
         <div class="fgroup" id="filter-year">
-          <button class="fbtn active" data-f="all">All</button>
+          <button class="fbtn active" data-f="all" data-i18n="f_all">All</button>
           <button class="fbtn" data-f="2026">2026</button>
           <button class="fbtn" data-f="2025">2025</button>
           <button class="fbtn" data-f="2024">2024</button>
           <button class="fbtn" data-f="2023">2023</button>
         </div>
-        <label class="switch"><input type="checkbox" id="filter-first" /> First-author only</label>
+        <label class="switch"><input type="checkbox" id="filter-first" /> <span data-i18n="f_first">First-author only</span></label>
       </div>
 
       <ol class="pubs" id="publist">
 
-        <li class="pub" data-year="2026" data-first="1">
+        <li class="pub" data-doi="10.1109/TMM.2026.3710080" data-year="2026" data-first="1">
           <div class="p-title">Controllable Foundation Model for Visible and Infrared Image Fusion with All-in-One Bad Weather Removal</div>
           <div class="p-authors"><b>Zeyang Zhang</b>, Tianyang Xu, Hui Li, Chunyang Cheng, Chengcheng Song, Linze Li, Xiaojun Wu, Muhammad Awais, Josef Kittler</div>
           <div class="p-venue"><span class="venue">IEEE Transactions on Multimedia (TMM)</span>, 2026
             <span class="badge b-ccfa">CCF-A</span><span class="badge b-if">IF 9.7</span>
+            <span class="badge b-cite js-cites"></span>
           </div>
+          <div class="p-links"><a href="https://doi.org/10.1109/TMM.2026.3710080" target="_blank" rel="noopener" data-i18n="l_paper">Paper</a></div>
         </li>
 
-        <li class="pub" data-year="2026" data-first="1">
+        <li class="pub" data-doi="10.1007/s11263-026-02793-4" data-year="2026" data-first="1">
           <div class="p-title">A Color Information Driven Collaborative Training of Dual Task Parallel Network for Visible and Thermal Infrared Image Fusion and Saliency Object Detection</div>
           <div class="p-authors"><b>Zeyang Zhang</b>, Hui Li, Tianyang Xu, Congcong Bian, Xiaojun Wu, Muhammad Awais, Josef Kittler</div>
           <div class="p-venue"><span class="venue">International Journal of Computer Vision (IJCV)</span>, 2026
             <span class="badge b-ccfa">CCF-A</span><span class="badge b-if">IF 9.6</span>
+            <span class="badge b-cite js-cites"></span>
           </div>
-          <div class="p-links"><a href="https://github.com/Yukarizz/CRTFS" target="_blank" rel="noopener">Code</a></div>
+          <div class="p-links">
+            <a href="https://doi.org/10.1007/s11263-026-02793-4" target="_blank" rel="noopener" data-i18n="l_paper">Paper</a>
+            <a href="https://github.com/Yukarizz/CRTFS" target="_blank" rel="noopener" data-i18n="l_code">Code</a>
+          </div>
         </li>
 
-        <li class="pub" data-year="2026" data-first="1">
+        <li class="pub" data-doi="10.1145/3773769" data-year="2026" data-first="1">
           <div class="p-title">BusReF: Infrared-Visible Images Registration and Fusion Focus on Reconstructible Area Using One Set of Features</div>
           <div class="p-authors"><b>Zeyang Zhang</b>, Hui Li, Tianyang Xu, Congcong Bian, Xiaojun Wu, Josef Kittler</div>
           <div class="p-venue"><span class="venue">ACM Transactions on Multimedia Computing, Communications and Applications (TOMM)</span>, 2026
             <span class="badge b-ccfb">CCF-B</span><span class="badge b-if">IF 6.0</span><span class="badge b-cite">Cited 2</span>
           </div>
-          <div class="p-links"><a href="https://github.com/Yukarizz/BusReF" target="_blank" rel="noopener">Code</a></div>
+          <div class="p-links">
+            <a href="https://doi.org/10.1145/3773769" target="_blank" rel="noopener" data-i18n="l_paper">Paper</a>
+            <a href="https://github.com/Yukarizz/BusReF" target="_blank" rel="noopener" data-i18n="l_code">Code</a>
+          </div>
         </li>
 
-        <li class="pub" data-year="2025" data-first="1">
+        <li class="pub" data-doi="10.1016/j.inffus.2024.102655" data-year="2025" data-first="1">
           <div class="p-title">DDBFusion: An Unified Image Decomposition and Fusion Framework Based on Dual Decomposition and Bézier Curves</div>
           <div class="p-authors"><b>Zeyang Zhang</b>, Hui Li, Tianyang Xu, Xiao-Jun Wu, Josef Kittler</div>
           <div class="p-venue"><span class="venue">Information Fusion</span>, vol. 114, 102655, 2025
             <span class="badge b-q1">SCI Q1 Top</span><span class="badge b-if">IF 14.7</span><span class="badge b-cite">Cited 84</span>
           </div>
           <div class="p-links">
-            <a href="https://doi.org/10.1016/j.inffus.2024.102655" target="_blank" rel="noopener">Paper</a>
-            <a href="https://github.com/Yukarizz/DDBFusion" target="_blank" rel="noopener">Code</a>
+            <a href="https://doi.org/10.1016/j.inffus.2024.102655" target="_blank" rel="noopener" data-i18n="l_paper">Paper</a>
+            <a href="https://github.com/Yukarizz/DDBFusion" target="_blank" rel="noopener" data-i18n="l_code">Code</a>
           </div>
         </li>
 
-        <li class="pub" data-year="2025" data-first="0">
+        <li class="pub" data-doi="10.1109/CVPR52734.2025.02617" data-year="2025" data-first="0">
           <div class="p-title">One Model for All: Low-Level Task Interaction Is a Key to Task-Agnostic Image Fusion</div>
           <div class="p-authors">Chunyang Cheng, Tianyang Xu, Zhenhua Feng, Xiaojun Wu, Zhangyong Tang, Hui Li, <b>Zeyang Zhang</b>, Sara Atito, Muhammad Awais, Josef Kittler</div>
           <div class="p-venue"><span class="venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2025
             <span class="badge b-ccfa">CCF-A</span><span class="badge b-cite">Cited 119</span>
           </div>
+          <div class="p-links"><a href="https://doi.org/10.1109/CVPR52734.2025.02617" target="_blank" rel="noopener" data-i18n="l_paper">Paper</a></div>
         </li>
 
-        <li class="pub" data-year="2025" data-first="0">
+        <li class="pub" data-doi="10.1007/s11263-025-02507-2" data-year="2025" data-first="0">
           <div class="p-title">OCCO: LVM-Guided Infrared and Visible Image Fusion Framework Based on Object-Aware and Contextual Contrastive Learning</div>
           <div class="p-authors">Hui Li, Congcong Bian, Zeyang Zhang, Xiaoqiang Song, Xing Li, Xiao-Jun Wu</div>
           <div class="p-venue"><span class="venue">International Journal of Computer Vision (IJCV)</span>, vol. 133, no. 9, pp. 6611–6635, 2025
             <span class="badge b-ccfa">CCF-A</span><span class="badge b-cite">Cited 7</span>
           </div>
+          <div class="p-links"><a href="https://doi.org/10.1007/s11263-025-02507-2" target="_blank" rel="noopener" data-i18n="l_paper">Paper</a></div>
         </li>
 
-        <li class="pub" data-year="2024" data-first="0">
+        <li class="pub" data-doi="10.1007/978-3-031-78169-8_4" data-year="2024" data-first="0">
           <div class="p-title">IFFusion: Illumination-Free Fusion Network for Infrared and Visible Images</div>
           <div class="p-authors">Chengcheng Song, Hui Li, Tianyang Xu, Zeyang Zhang, Xiao-Jun Wu</div>
-          <div class="p-venue"><span class="venue">International Conference on Pattern Recognition (ICPR)</span>, pp. 46–61, 2024</div>
+          <div class="p-venue"><span class="venue">International Conference on Pattern Recognition (ICPR)</span>, pp. 46–61, 2024 <span class="badge b-cite js-cites"></span></div>
+          <div class="p-links"><a href="https://doi.org/10.1007/978-3-031-78169-8_4" target="_blank" rel="noopener" data-i18n="l_paper">Paper</a></div>
         </li>
 
-        <li class="pub" data-year="2024" data-first="0">
+        <li class="pub" data-doi="10.3390/s24227287" data-year="2024" data-first="0">
           <div class="p-title">EDMF: A New Benchmark for Multi-Focus Images with the Challenge of Exposure Difference</div>
           <div class="p-authors">Hui Li, Tianshui Shen, Zeyang Zhang, Xiaojun Zhu, Xiaoqiang Song</div>
           <div class="p-venue"><span class="venue">Sensors</span>, vol. 24, no. 22, 7287, 2024
             <span class="badge b-cite">Cited 8</span>
           </div>
+          <div class="p-links"><a href="https://doi.org/10.3390/s24227287" target="_blank" rel="noopener" data-i18n="l_paper">Paper</a></div>
         </li>
 
-        <li class="pub" data-year="2024" data-first="0">
+        <li class="pub" data-doi="10.1007/978-981-97-8685-5_38" data-year="2024" data-first="0">
           <div class="p-title">CoMoFusion: Fast and High-Quality Fusion of Infrared and Visible Image with Consistency Model</div>
           <div class="p-authors">Zixiang Meng, Hui Li, Zeyang Zhang, Zhen Shen, Yuwen Yu, Xiaoqiang Song, Xiao-Jun Wu</div>
           <div class="p-venue"><span class="venue">Chinese Conference on Pattern Recognition and Computer Vision (PRCV)</span>, pp. 539–553, 2024
             <span class="badge b-cite">Cited 11</span>
           </div>
+          <div class="p-links"><a href="https://doi.org/10.1007/978-981-97-8685-5_38" target="_blank" rel="noopener" data-i18n="l_paper">Paper</a></div>
         </li>
 
-        <li class="pub" data-year="2023" data-first="1">
+        <li class="pub" data-doi="10.1109/TIM.2023.3306537" data-year="2023" data-first="1">
           <div class="p-title">GuideFuse: A Novel Guided Auto-Encoder Fusion Network for Infrared and Visible Images</div>
           <div class="p-authors"><b>Zeyang Zhang</b>, Hui Li, Tianyang Xu, Xiao-Jun Wu, Yu Fu</div>
           <div class="p-venue"><span class="venue">IEEE Transactions on Instrumentation and Measurement (TIM)</span>, vol. 73, pp. 1–11, 2023
             <span class="badge b-q2">SCI Q2 Top</span><span class="badge b-if">IF 5.6</span><span class="badge b-cite">Cited 23</span>
           </div>
           <div class="p-links">
-            <a href="https://doi.org/10.1109/TIM.2023.3320511" target="_blank" rel="noopener">Paper</a>
-            <a href="https://github.com/Yukarizz/GuideFuse" target="_blank" rel="noopener">Code</a>
+            <a href="https://doi.org/10.1109/TIM.2023.3306537" target="_blank" rel="noopener" data-i18n="l_paper">Paper</a>
+            <a href="https://github.com/Yukarizz/GuideFuse" target="_blank" rel="noopener" data-i18n="l_code">Code</a>
           </div>
         </li>
 
@@ -282,39 +301,39 @@
 
     <!-- ================= SERVICE ================= -->
     <section id="talks">
-      <h2>Academic Service</h2>
+      <h2 data-i18n="h_svc">Academic Service</h2>
       <ul class="plain">
-        <li>Reviewer for <em>IEEE Transactions on Multimedia</em>, <em>Information Fusion</em>, <em>IJCV</em>, <em>IEEE TIM</em> and related venues. <span class="muted">(update as needed)</span></li>
+        <li data-i18n-html="svc1">Reviewer for <em>IEEE Transactions on Multimedia</em>, <em>Information Fusion</em>, <em>IJCV</em>, <em>IEEE TIM</em> and related venues. <span class="muted">(update as needed)</span></li>
       </ul>
     </section>
 
     <!-- ================= AWARDS ================= -->
     <section id="awards">
-      <h2>Awards &amp; Certificates</h2>
+      <h2 data-i18n="h_award">Awards &amp; Certificates</h2>
       <ul class="plain">
-        <li><b>CSC National Scholarship</b> for joint Ph.D. training, China Scholarship Council</li>
-        <li><b>DET 120</b> (Duolingo English Test, equivalent to IELTS 6.5)</li>
-        <li><b>CET-4 / CET-6</b>, National College English Test</li>
-        <li><b>IoT Engineer Certificate</b></li>
-        <li><b>National Computer Rank Examination, Level 2</b></li>
+        <li data-i18n-html="aw1"><b>CSC National Scholarship</b> for joint Ph.D. training, China Scholarship Council</li>
+        <li data-i18n-html="aw2"><b>DET 120</b> (Duolingo English Test, equivalent to IELTS 6.5)</li>
+        <li data-i18n-html="aw3"><b>CET-4 / CET-6</b>, National College English Test</li>
+        <li data-i18n-html="aw4"><b>IoT Engineer Certificate</b></li>
+        <li data-i18n-html="aw5"><b>National Computer Rank Examination, Level 2</b></li>
       </ul>
     </section>
 
     <!-- ================= SKILLS ================= -->
     <section id="skills">
-      <h2>Skills</h2>
+      <h2 data-i18n="h_skill">Skills</h2>
       <div class="skillgrid">
         <div class="skill">
-          <h3>Languages</h3>
-          <p>Python, C++ / CUDA, MATLAB</p>
+          <h3 data-i18n="sk1_h">Languages</h3>
+          <p data-i18n="sk1_p">Python, C++ / CUDA, MATLAB</p>
         </div>
         <div class="skill">
-          <h3>Frameworks &amp; Tools</h3>
-          <p>PyTorch, Pandas, OpenCV, LangChain, LangGraph, Milvus, LLaMA-Factory</p>
+          <h3 data-i18n="sk2_h">Frameworks &amp; Tools</h3>
+          <p data-i18n="sk2_p">PyTorch, Pandas, OpenCV, LangChain, LangGraph, Milvus, LLaMA-Factory</p>
         </div>
         <div class="skill">
-          <h3>Research Topics</h3>
-          <p>Multimodal fusion, Diffusion Models, Transformer, CNN, Saliency Detection</p>
+          <h3 data-i18n="sk3_h">Research Topics</h3>
+          <p data-i18n="sk3_p">Multimodal fusion, Diffusion Models, Transformer, CNN, Saliency Detection</p>
         </div>
       </div>
     </section>
@@ -322,12 +341,13 @@
   </main>
 
   <footer>
-    <p>Last updated: September 2026 &middot; Built with plain HTML/CSS &middot;
+    <p><span data-i18n-html="footer">Last updated: September 2026 &middot; Built with plain HTML/CSS</span> &middot;
       <a href="https://github.com/Yukarizz" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
 </div>
 
+<script src="assets/i18n.js"></script>
 <script src="assets/main.js"></script>
 </body>
 </html>
