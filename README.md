@@ -22,8 +22,8 @@ F:\GitHomePage\
 ├── files/
 │   └── Zeyang-Zhang-CV.pdf     # 简历，供页面 CV 按钮下载
 ├── img/
-│   ├── photo.jpg               # 头像（由 Mine.jpg 裁切而来）
-│   └── Mine.jpg                # 原始证件照，留作重新裁切用
+│   ├── photo-full.jpg          # 页面用的头像：Mine.jpg 原尺寸等比压缩版（未裁切）
+│   └── Mine.jpg                # 原始证件照（1584×2304），留作重新出图用
 ├── deploy.bat                  # Windows 一键提交 + 推送
 └── deploy.sh                   # Git Bash / macOS 一键提交 + 推送
 ```
@@ -116,7 +116,7 @@ python -m http.server 8000
 | 想改什么 | 改哪里 |
 | --- | --- |
 | 导航条目 | `<nav class="toc">`，同时保证对应 section 的 `id` 存在 |
-| 头像 | 替换 `img/photo.jpg`（正方形，建议 600×600） |
+| 头像 | 替换 `img/photo-full.jpg`。竖版原比例完整显示，**不用裁成正方形**；显示高度在 `assets/style.css` 的 `.hero-photo img`（桌面 186px / 移动端 150px） |
 | 论文 | `index.html` → `<ol class="pubs" id="publist">` 里的 `<li class="pub">` |
 | 论文年份筛选 / 一作标记 | `li` 上的 `data-year` 与 `data-first="1"`；自己的名字用 `<b>` 包起来 |
 | 学者指标 | 已自动同步；`index.html` 顶部 `<div class="metrics">` 里的数字只是无 JS 时的兜底值 |
