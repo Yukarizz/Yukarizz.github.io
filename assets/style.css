@@ -98,6 +98,11 @@ a:hover{ text-decoration:underline; }
   transition:background .15s, color .15s;
 }
 .btn:hover{ background:var(--accent); color:#fff; text-decoration:none; }
+/* .ghost = 次级按钮样式（浅色描边）。当前页面未使用（学院主页按钮已移除）。
+   以后要加"学院主页 / Institution Page"按钮时，在 index.html 的 .buttons 里加：
+   <a class="btn ghost" href="https://ai.jiangnan.edu.cn" target="_blank" rel="noopener"
+      data-i18n="btn_inst">Institution Page</a>
+   并在 assets/i18n.js 的 en / zh 两处补 btn_inst 词条即可。 */
 .btn.ghost{ border-color:var(--line); color:var(--ink-soft); }
 .btn.ghost:hover{ background:var(--bg-soft); color:var(--ink); border-color:var(--line); }
 
