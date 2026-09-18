@@ -78,7 +78,7 @@ var I18N = {
     l_paper: 'Paper', l_code: 'Code',
 
     h_svc: 'Academic Service',
-    svc1: 'Reviewer for <em>IEEE Transactions on Multimedia</em>, <em>Information Fusion</em>, <em>IJCV</em>, <em>IEEE TIM</em> and related venues. <span class="muted">(update as needed)</span>',
+    svc1: 'Reviewer for <em>IEEE TPAMI</em>, <em>AAAI</em>, <em>ECCV</em>, <em>ACM MM</em>, <em>Information Fusion</em>, and other journals and conferences.',
 
     h_award: 'Awards',
     aw1: '<b>CSC National Scholarship</b> for joint Ph.D. training, China Scholarship Council',
@@ -150,7 +150,7 @@ var I18N = {
     l_paper: '论文', l_code: '代码',
 
     h_svc: '学术服务',
-    svc1: '担任 <em>IEEE Transactions on Multimedia</em>、<em>Information Fusion</em>、<em>IJCV</em>、<em>IEEE TIM</em> 等期刊与会议审稿人。<span class="muted">（请按需核实）</span>',
+    svc1: '担任 <em>IEEE TPAMI</em>、<em>AAAI</em>、<em>ECCV</em>、<em>ACM MM</em>、<em>Information Fusion</em> 等期刊与会议审稿人。',
 
     h_award: '荣誉奖项',
     aw1: '<b>国家留学基金委（CSC）公派奖学金</b>，联合培养博士研究生',
