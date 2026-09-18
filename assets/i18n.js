@@ -11,7 +11,7 @@ var I18N = {
     affil1: 'School of Artificial Intelligence and Computer Science',
     affil2: 'Jiangnan University, Wuxi, Jiangsu, China',
     ct_email: 'E-mail', ct_tel: 'Tel',
-    btn_cv: 'CV (PDF)', btn_inst: 'Institution Page',
+    btn_cv: 'CV (PDF)',
     m_cit: 'Citations', m_h: 'h-index', m_i10: 'i10-index', m_pub: 'Publications',
 
     nav_about: 'About', nav_news: 'News', nav_edu: 'Education', nav_exp: 'Experience',
@@ -91,7 +91,7 @@ var I18N = {
     affil1: '人工智能与计算机学院',
     affil2: '江南大学 · 江苏无锡 · 中国',
     ct_email: '邮箱', ct_tel: '电话',
-    btn_cv: '简历 (PDF)', btn_inst: '学院主页',
+    btn_cv: '简历 (PDF)',
     m_cit: '被引次数', m_h: 'h 指数', m_i10: 'i10 指数', m_pub: '论文数',
 
     nav_about: '个人简介', nav_news: '最新动态', nav_edu: '教育经历', nav_exp: '实习经历',
