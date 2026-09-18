@@ -178,6 +178,26 @@ def from_crossref(papers):
             "hindex": None, "i10index": None, "by_doi": by_doi, "by_title": {}}
 
 
+def load_baseline():
+    """人工核实的 Google Scholar 权威数值。
+
+    Google Scholar 没有官方 API，从 GitHub Actions 的服务器直连 scholar.google.com
+    会被拦截，兜底源（Semantic Scholar）收录口径更窄、数字偏小。
+    因此提供一份人工基线：抓不到 Scholar 时以它为准，保证主页数字与 Scholar 一致。
+    """
+    path = os.environ.get("BASELINE_PATH", os.path.join(HERE, "scholar-baseline.json"))
+    if not os.path.exists(path):
+        return None
+    try:
+        b = json.load(open(path, encoding="utf-8"))
+    except Exception as e:
+        sys.stderr.write("baseline 解析失败: %r\n" % (e,))
+        return None
+    if b.get("citations") is None:
+        return None
+    return b
+
+
 def compute_hindex(counts):
     counts = sorted((c for c in counts if c), reverse=True)
     h = 0
@@ -194,8 +214,9 @@ def main():
     papers = read_papers()
     print("[i] index.html 中解析到 %d 篇带 DOI 的论文" % len(papers))
 
+    # 1) 先试真正的 Google Scholar 数据源
     result = None
-    for fn in (from_serpapi, from_scholarly, from_semanticscholar, from_crossref):
+    for fn in (from_serpapi, from_scholarly):
         if out_of_time():
             print("[!] 超出时间预算，停止尝试后续数据源")
             break
@@ -208,9 +229,44 @@ def main():
             result = r
             print("[OK] 数据源: %s" % r["source"])
             break
+
+    # 2) 抓不到 Scholar：优先用人工基线（数字与 Scholar 一致），否则退回兜底源
     if not result:
-        print("[X] 所有数据源都失败，保留旧数据不动")
-        return 1
+        fallback = None
+        for fn in (from_semanticscholar, from_crossref):
+            if out_of_time():
+                break
+            try:
+                r = fn(papers)
+            except Exception as e:
+                sys.stderr.write("%s failed: %r\n" % (fn.__name__, e))
+                r = None
+            if r:
+                fallback = r
+                print("[i] 兜底数据源: %s（口径与 Google Scholar 不同）" % r["source"])
+                break
+
+        base = load_baseline()
+        if base:
+            result = {
+                "source": "google-scholar(manual)",
+                "citations": base.get("citations"),
+                "hindex": base.get("hindex"),
+                "i10index": base.get("i10index"),
+                "by_doi": dict(base.get("papers") or {}),
+                # 基线里没有的论文（新发表的）仍用兜底源按标题补上
+                "by_title": (fallback or {}).get("by_title") or {},
+            }
+            print("[OK] 数据源: 人工基线（Google Scholar 实测值 %s/%s/%s）"
+                  % (base.get("citations"), base.get("hindex"), base.get("i10index")))
+            if not base.get("papers"):
+                print("[!] 基线里没有逐篇数据")
+        elif fallback:
+            result = fallback
+            print("[!] 无基线文件，只能使用兜底源，主页数字会小于 Google Scholar")
+        else:
+            print("[X] 所有数据源都失败，保留旧数据不动")
+            return 1
 
     # 按 DOI 汇总每篇引用数
     per_doi = dict(result.get("by_doi") or {})
