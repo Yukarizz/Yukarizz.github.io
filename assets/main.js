@@ -55,4 +55,54 @@
   }, { passive: true });
 
   spy();
+
+  /* ---- live citation data ----
+     GitHub Actions 每天抓取引用数据，写入 scholar-data 分支的 data/scholar.json，
+     这里拉取后更新页面数字。拉取失败就沿用页面里写死的数值，不影响展示。 */
+  var DATA_URL = 'https://raw.githubusercontent.com/Yukarizz/Yukarizz.github.io/'
+               + 'scholar-data/data/scholar.json';
+
+  function setText(id, value) {
+    var el = document.getElementById(id);
+    if (el && value !== null && value !== undefined) el.textContent = value;
+  }
+
+  function updateCitations(data) {
+    if (!data) return;
+    setText('m-citations', data.citations);
+    setText('m-hindex', data.hindex);
+    setText('m-i10index', data.i10index);
+    if (data.papers) setText('m-pubcount', Object.keys(data.papers).length);
+
+    pubs.forEach(function (p) {
+      var doi = p.getAttribute('data-doi');
+      if (!doi || !data.papers) return;
+      var n = data.papers[doi];
+      if (n === undefined || n === null) return;
+      var badge = p.querySelector('.b-cite');
+      if (!badge) {
+        badge = document.createElement('span');
+        badge.className = 'badge b-cite';
+        var venue = p.querySelector('.p-venue');
+        if (venue) venue.appendChild(badge); else return;
+      }
+      badge.textContent = 'Cited ' + n;
+      badge.hidden = (n === 0);
+    });
+
+    var note = document.getElementById('cite-note');
+    if (note && data.updated) {
+      var d = data.updated.slice(0, 10);
+      var src = data.source === 'google-scholar' ? 'Google Scholar'
+              : (data.source || '').indexOf('serpapi') > -1 ? 'Google Scholar'
+              : data.source === 'semantic-scholar' ? 'Semantic Scholar'
+              : data.source === 'crossref' ? 'Crossref' : data.source;
+      note.textContent = 'Citation data: ' + src + ' · updated ' + d;
+    }
+  }
+
+  fetch(DATA_URL, { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(updateCitations)
+    .catch(function () { /* 拿不到就保留写死的数值 */ });
 })();
