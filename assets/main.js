@@ -97,7 +97,11 @@
               : (data.source || '').indexOf('serpapi') > -1 ? 'Google Scholar'
               : data.source === 'semantic-scholar' ? 'Semantic Scholar'
               : data.source === 'crossref' ? 'Crossref' : data.source;
-      note.textContent = 'Citation data: ' + src + ' · updated ' + d;
+      var txt = 'Citation data: ' + src + ' · updated ' + d;
+      note.textContent = txt;
+      // 顶部指标区也标注数据来源，避免与 Google Scholar 主页的数字混淆
+      var metrics = document.querySelector('.metrics');
+      if (metrics) metrics.title = txt;
     }
   }
 
