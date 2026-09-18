@@ -74,20 +74,34 @@ def from_serpapi(papers):
     key = os.environ.get("SERPAPI_KEY")
     if not key:
         return None
-    url = ("https://serpapi.com/search.json?engine=google_scholar_author"
-           "&author_id=%s&api_key=%s" % (SCHOLAR_ID, key))
-    d = http_json(url)
-    stats = (d.get("cited_by") or {}).get("table") or []
+    base = ("https://serpapi.com/search.json?engine=google_scholar_author"
+            "&author_id=%s&hl=en&num=20&api_key=%s" % (SCHOLAR_ID, key))
     total = h = i10 = None
-    for row in stats:
-        c = (row.get("citations") or {})
-        if "All" in str(c.get("href", "")) or c.get("all") is not None:
-            total = c.get("all")
-        h = row.get("h_index", {}).get("all", h)
-        i10 = row.get("i10_index", {}).get("all", i10)
     per = {}
-    for art in (d.get("articles") or []):
-        per[norm(art.get("title", ""))] = (art.get("cited_by") or {}).get("value", 0)
+    # 该接口每页最多 20 篇，翻页取全，避免论文变多后漏统计
+    for start in (0, 20, 40, 60):
+        if out_of_time():
+            break
+        url = base if start == 0 else base + "&start=%d" % start
+        try:
+            d = http_json(url)
+        except Exception as e:
+            sys.stderr.write("serpapi page start=%d failed: %r\n" % (start, e))
+            break
+        stats = (d.get("cited_by") or {}).get("table") or []
+        for row in stats:
+            c = (row.get("citations") or {})
+            if c.get("all") is not None:
+                total = c.get("all")
+            if row.get("h_index"):
+                h = row["h_index"].get("all", h)
+            if row.get("i10_index"):
+                i10 = row["i10_index"].get("all", i10)
+        arts = d.get("articles") or []
+        for art in arts:
+            per[norm(art.get("title", ""))] = (art.get("cited_by") or {}).get("value", 0)
+        if len(arts) < 20:
+            break
     if total is None and not per:
         return None
     return {"source": "google-scholar(serpapi)", "citations": total,
