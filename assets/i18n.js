@@ -19,18 +19,28 @@ var I18N = {
     lang_btn: '中文',
 
     h_about: 'About',
-    about_p1: 'I am a Ph.D. candidate in Software Engineering at the ' +
-      '<strong>School of Artificial Intelligence and Computer Science, Jiangnan University</strong>, ' +
-      'Wuxi, China, working in the multimodal group of <strong>Prof. Xiao-Jun Wu</strong> and ' +
-      '<strong>Prof. Josef Kittler</strong>. From 2025 to 2026 I am a CSC-funded visiting Ph.D. ' +
-      'student at the Centre for Vision, Speech and Signal Processing (CVSSP), ' +
-      '<strong>University of Surrey</strong>, United Kingdom.',
-    about_p2: 'My research centres on <strong>multimodal image fusion</strong> with an emphasis on ' +
-      'robustness in complex environments — in particular, addressing the severe performance ' +
-      'degradation that existing fusion methods suffer under adverse weather conditions. My work ' +
-      'spans low-level vision tasks such as image registration, fusion and super-resolution, and ' +
-      'the efficient deployment of models on edge devices. I also work with large language models, ' +
-      'including fine-tuning and application deployment.',
+    about_p1: 'I received my B.Eng. degree in Internet of Things Engineering from Jinling Institute ' +
+      'of Technology, Nanjing, China, in 2021. In the same year, I began my graduate studies at ' +
+      'Jiangnan University, Wuxi, China, where I pursued a Master\'s degree in Computer Science ' +
+      'before being admitted to the doctoral program. I am currently working toward my Ph.D. ' +
+      'degree in Software Engineering at the Jiangsu Provincial Engineering Laboratory of Pattern ' +
+      'Recognition and Computational Intelligence, Jiangnan University, under the supervision of ' +
+      '<a href="https://scholar.google.com/citations?user=5IST34sAAAAJ&amp;hl=en" target="_blank" rel="noopener"><strong>Prof. Xiao-Jun Wu</strong></a> and ' +
+      '<a href="https://www.surrey.ac.uk/people/josef-kittler" target="_blank" rel="noopener"><strong>Prof. Josef Kittler</strong></a>. From 2025 to 2026, ' +
+      'I was a China Scholarship Council (CSC) sponsored joint-training Ph.D. student at the ' +
+      '<strong>University of Surrey</strong>, United Kingdom, hosted by ' +
+      '<strong>Prof. Josef Kittler</strong>.',
+    about_p2: 'My research focuses on <strong>multimodal image fusion</strong>, with an emphasis on ' +
+      'robustness in complex and adverse environments. These works address the pronounced ' +
+      'performance degradation of existing methods when fusing cross-modal data under challenging ' +
+      'conditions such as bad weather and misalignment. My expertise also covers low-level vision ' +
+      'tasks (e.g., image registration and super-resolution) and efficient model deployment on ' +
+      'edge devices.',
+    about_p3: 'My publications appear in venues such as <em>IEEE Transactions on Multimedia</em> ' +
+      '(TMM), <em>International Journal of Computer Vision</em> (IJCV), <em>Information Fusion</em>, ' +
+      '<em>IEEE Transactions on Instrumentation and Measurement</em> (TIM), ' +
+      '<em>ACM Transactions on Multimedia Computing, Communications, and Applications</em> (TOMM), ' +
+      'CVPR, and ICPR.',
     chip1: 'Multimodal Image Fusion', chip2: 'Infrared–Visible Fusion',
     chip3: 'Image Registration', chip4: 'Diffusion Models', chip5: 'Transformers',
     chip6: 'CNNs', chip7: 'Saliency Detection', chip8: 'Adverse Weather Restoration',
@@ -99,14 +109,21 @@ var I18N = {
     lang_btn: 'EN',
 
     h_about: '个人简介',
-    about_p1: '我是<strong>江南大学人工智能与计算机学院</strong>软件工程专业博士研究生（中国无锡），'
-      + '隶属<strong>吴小俊教授</strong>与<strong>Josef Kittler 教授</strong>的多模态研究组。'
-      + '2025 至 2026 年，受国家留学基金委（CSC）资助赴<strong>英国萨里大学</strong>'
-      + '视觉、语音与信号处理研究中心（CVSSP）进行联合培养。',
-    about_p2: '我的研究聚焦于<strong>多模态图像融合</strong>，尤其关注复杂环境下的鲁棒性 —— '
-      + '着力解决现有融合方法在恶劣天气条件下性能显著下降的问题。相关工作涵盖图像配准、'
-      + '图像融合、超分辨率等底层视觉任务，以及模型在边缘设备上的高效部署。'
-      + '同时也涉及大语言模型的微调与应用部署。',
+    about_p1: '我于 2021 年获<strong>金陵科技学院</strong>物联网工程专业工学学士学位（中国南京）。'
+      + '同年进入<strong>江南大学</strong>（中国无锡）攻读计算机科学与技术硕士学位，后转入博士阶段。'
+      + '现为江南大学<strong>江苏省模式识别与计算智能工程实验室</strong>软件工程专业博士研究生，'
+      + '师从<a href="https://scholar.google.com/citations?user=5IST34sAAAAJ&amp;hl=en" target="_blank" rel="noopener"><strong>吴小俊教授</strong></a>'
+      + '与<a href="https://www.surrey.ac.uk/people/josef-kittler" target="_blank" rel="noopener"><strong>Josef Kittler 教授</strong></a>。'
+      + '2025 至 2026 年，受国家留学基金委（CSC）资助赴<strong>英国萨里大学</strong>联合培养，'
+      + '合作导师为 Josef Kittler 教授。',
+    about_p2: '我的研究聚焦于<strong>多模态图像融合</strong>，重点关注复杂与恶劣环境下的鲁棒性。'
+      + '相关工作着力解决现有方法在恶劣天气、模态失配等条件下融合跨模态数据时性能显著退化的问题。'
+      + '研究专长亦涵盖图像配准、超分辨率等底层视觉任务，以及模型在边缘设备上的高效部署。',
+    about_p3: '相关成果发表于 <em>IEEE Transactions on Multimedia</em>（TMM）、'
+      + '<em>International Journal of Computer Vision</em>（IJCV）、<em>Information Fusion</em>、'
+      + '<em>IEEE Transactions on Instrumentation and Measurement</em>（TIM）、'
+      + '<em>ACM Transactions on Multimedia Computing, Communications, and Applications</em>（TOMM）、'
+      + 'CVPR 与 ICPR 等期刊与会议。',
     chip1: '多模态图像融合', chip2: '红外-可见光融合', chip3: '图像配准',
     chip4: '扩散模型', chip5: 'Transformer', chip6: '卷积神经网络',
     chip7: '显著性检测', chip8: '恶劣天气复原', chip9: '边缘端高效部署',
