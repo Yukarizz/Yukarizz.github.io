@@ -80,12 +80,8 @@ var I18N = {
     h_svc: 'Academic Service',
     svc1: 'Reviewer for <em>IEEE Transactions on Multimedia</em>, <em>Information Fusion</em>, <em>IJCV</em>, <em>IEEE TIM</em> and related venues. <span class="muted">(update as needed)</span>',
 
-    h_award: 'Awards & Certificates',
+    h_award: 'Awards',
     aw1: '<b>CSC National Scholarship</b> for joint Ph.D. training, China Scholarship Council',
-    aw2: '<b>DET 120</b> (Duolingo English Test, equivalent to IELTS 6.5)',
-    aw3: '<b>CET-4 / CET-6</b>, National College English Test',
-    aw4: '<b>IoT Engineer Certificate</b>',
-    aw5: '<b>National Computer Rank Examination, Level 2</b>',
 
     footer: 'Last updated: September 2026 &middot; Built with plain HTML/CSS'
   },
@@ -156,12 +152,8 @@ var I18N = {
     h_svc: '学术服务',
     svc1: '担任 <em>IEEE Transactions on Multimedia</em>、<em>Information Fusion</em>、<em>IJCV</em>、<em>IEEE TIM</em> 等期刊与会议审稿人。<span class="muted">（请按需核实）</span>',
 
-    h_award: '荣誉与证书',
+    h_award: '荣誉奖项',
     aw1: '<b>国家留学基金委（CSC）公派奖学金</b>，联合培养博士研究生',
-    aw2: '<b>DET 120</b>（多邻国英语测试，等同雅思 6.5）',
-    aw3: '<b>大学英语四级 / 六级（CET-4 / CET-6）</b>',
-    aw4: '<b>物联网工程师证书</b>',
-    aw5: '<b>全国计算机等级考试二级</b>',
 
     footer: '最后更新：2026 年 9 月 &middot; 纯 HTML/CSS 构建'
   }
