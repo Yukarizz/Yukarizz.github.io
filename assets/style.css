@@ -129,6 +129,21 @@ a:hover{ text-decoration:underline; }
 .toc a:hover{ background:var(--bg-soft); text-decoration:none; }
 .toc a.active{ background:var(--accent-dim); color:var(--accent); font-weight:600; }
 
+/* 语言切换按钮：始终吸在导航条右端 */
+.toc-right{ margin-left:auto; display:flex; align-items:center; }
+.langbtn{
+  font:inherit; font-size:.8rem; font-weight:600;
+  letter-spacing:.02em;
+  padding:4px 12px;
+  border:1px solid var(--accent);
+  border-radius:999px;
+  background:#fff;
+  color:var(--accent);
+  cursor:pointer;
+  transition:background .15s, color .15s;
+}
+.langbtn:hover{ background:var(--accent); color:#fff; }
+
 /* ---------------- SECTIONS ---------------- */
 section{ padding:26px 0 6px; scroll-margin-top:56px; }
 h2{
@@ -278,6 +293,7 @@ p{ margin:0 0 12px; }
 .b-q2  { background:#eaf3fb; color:#1a5fb4; }
 .b-if  { background:#f0eefe; color:#5b3fa8; }
 .b-cite{ background:var(--line-soft); color:var(--muted); }
+.badge[hidden]{ display:none; }
 
 /* ---------------- PLAIN LISTS ---------------- */
 .plain{ margin:0; padding-left:22px; }
@@ -318,4 +334,6 @@ footer p{ margin:0; }
   .when{ flex:none; }
   .toc{ gap:2px; }
   .toc a{ padding:3px 8px; font-size:.8rem; }
+  .toc-right{ padding-left:4px; }
+  .langbtn{ padding:3px 10px; font-size:.78rem; }
 }
