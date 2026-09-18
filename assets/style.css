@@ -51,8 +51,9 @@ a:hover{ text-decoration:underline; }
 }
 .hero-photo{ flex:0 0 auto; }
 .hero-photo img{
-  width:168px; height:168px;
-  object-fit:cover;
+  /* 竖版证件照：按原始比例完整显示，不做正方形裁切 */
+  height:186px; width:auto;
+  max-width:100%;
   border-radius:var(--radius);
   border:1px solid var(--line);
   display:block;
@@ -332,7 +333,7 @@ footer p{ margin:0; }
 @media (max-width:720px){
   .wrap{ padding:30px 18px 56px; }
   .hero{ flex-direction:column; gap:18px; }
-  .hero-photo img{ width:132px; height:132px; }
+  .hero-photo img{ width:auto; height:150px; }
   .hero h1{ font-size:1.6rem; }
   .metrics{ gap:18px; }
   .entry{ flex-direction:column; gap:4px; }
