@@ -1,7 +1,6 @@
 # Personal Academic Homepage — Zeyang Zhang 张泽阳
 
-纯静态学术主页（无框架、无外部依赖）。版式参考 [xu-tianyang.github.io](https://xu-tianyang.github.io/)，
-内容整合自 Google Scholar、GitHub 与个人 CV。
+纯静态学术主页（无框架、无外部依赖）。
 
 - **本机路径**：`F:\GitHomePage`
 - **线上地址**：https://Yukarizz.github.io/
