@@ -22,7 +22,7 @@ F:\GitHomePage\
 │   └── Zeyang-Zhang-CV.pdf     # 简历，供页面 CV 按钮下载
 ├── img/
 │   ├── photo-full.jpg          # 页面用的头像：Mine.jpg 原尺寸等比压缩版（未裁切）
-│   └── Mine.jpg                # 原始证件照（1584×2304），留作重新出图用
+│   └── Mine.jpg                # 原始证件照（1371×1920），留作重新出图用
 ├── deploy.bat                  # Windows 一键提交 + 推送
 └── deploy.sh                   # Git Bash / macOS 一键提交 + 推送
 ```
