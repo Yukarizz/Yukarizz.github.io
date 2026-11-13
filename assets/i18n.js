@@ -13,6 +13,7 @@ var I18N = {
     ct_email: 'E-mail', ct_tel: 'Tel',
     btn_cv: 'CV (PDF)',
     m_cit: 'Citations', m_h: 'h-index', m_i10: 'i10-index', m_pub: 'Publications',
+    m_upd: 'Updated',
 
     nav_about: 'About', nav_news: 'News', nav_edu: 'Education', nav_exp: 'Experience',
     nav_pub: 'Publications', nav_svc: 'Service', nav_award: 'Awards',
@@ -93,6 +94,7 @@ var I18N = {
     ct_email: '邮箱', ct_tel: '电话',
     btn_cv: '简历 (PDF)',
     m_cit: '被引次数', m_h: 'h 指数', m_i10: 'i10 指数', m_pub: '论文数',
+    m_upd: '更新日期',
 
     nav_about: '个人简介', nav_news: '最新动态', nav_edu: '教育经历', nav_exp: '实习经历',
     nav_pub: '发表论文', nav_svc: '学术服务', nav_award: '荣誉奖项',

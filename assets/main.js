@@ -103,6 +103,12 @@
       // 顶部指标区也标注数据来源，避免与 Google Scholar 主页的数字混淆
       var metrics = document.querySelector('.metrics');
       if (metrics) metrics.title = txt;
+      // 指标行右侧的更新日期跟随 scholar.json 自动刷新（无 JS / 抓取失败时用 HTML 里的兜底值）
+      var upd = document.getElementById('m-updated');
+      if (upd) {
+        upd.textContent = d;
+        upd.setAttribute('datetime', d);
+      }
     }
   }
 

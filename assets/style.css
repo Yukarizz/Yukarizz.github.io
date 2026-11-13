@@ -116,6 +116,13 @@ a:hover{ text-decoration:underline; }
 .metric b{ font-size:1.32rem; font-weight:700; }
 .metric span{ font-size:.78rem; color:var(--muted); letter-spacing:.02em; }
 
+/* 指标行最右侧的「更新日期」：靠右对齐，字号略小，避免和四个数字抢视觉 */
+.metric-updated{ margin-left:auto; align-items:flex-end; text-align:right; }
+.metric-updated time{
+  font-size:1.02rem; font-weight:600; color:var(--ink-soft);
+  font-variant-numeric:tabular-nums; line-height:1.25;
+}
+
 /* ---------------- NAV ---------------- */
 .toc{
   position:sticky; top:0; z-index:20;
@@ -336,6 +343,7 @@ footer p{ margin:0; }
   .hero-photo img{ width:auto; height:150px; }
   .hero h1{ font-size:1.6rem; }
   .metrics{ gap:18px; }
+  .metric-updated{ margin-left:0; align-items:flex-start; text-align:left; }
   .entry{ flex-direction:column; gap:4px; }
   .when{ flex:none; }
   .toc{ gap:2px; }
