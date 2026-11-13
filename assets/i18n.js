@@ -82,9 +82,7 @@ var I18N = {
     svc1: 'Reviewer for <em>IEEE TPAMI</em>, <em>IEEE TIP</em>, <em>AAAI</em>, <em>ECCV</em>, <em>ACM MM</em>, <em>Information Fusion</em>, and other journals and conferences.',
 
     h_award: 'Awards',
-    aw1: '<b>CSC National Scholarship</b> for joint Ph.D. training, China Scholarship Council',
-
-    footer: 'Last updated: September 2026 &middot; Built with plain HTML/CSS'
+    aw1: '<b>CSC National Scholarship</b> for joint Ph.D. training, China Scholarship Council'
   },
 
   zh: {
@@ -155,9 +153,7 @@ var I18N = {
     svc1: '担任 <em>IEEE TPAMI</em>、<em>IEEE TIP</em>、<em>AAAI</em>、<em>ECCV</em>、<em>ACM MM</em>、<em>Information Fusion</em> 等期刊与会议审稿人。',
 
     h_award: '荣誉奖项',
-    aw1: '<b>国家留学基金委（CSC）公派奖学金</b>，联合培养博士研究生',
-
-    footer: '最后更新：2026 年 9 月 &middot; 纯 HTML/CSS 构建'
+    aw1: '<b>国家留学基金委（CSC）公派奖学金</b>，联合培养博士研究生'
   }
 };
 

@@ -7,6 +7,7 @@
   --ink:        #16181d;
   --ink-soft:   #3d444e;
   --muted:      #6b7480;
+  --faint:      #9aa3ad;
   --line:       #e3e7ec;
   --line-soft:  #eef1f5;
   --bg:         #ffffff;
@@ -116,12 +117,13 @@ a:hover{ text-decoration:underline; }
 .metric b{ font-size:1.32rem; font-weight:700; }
 .metric span{ font-size:.78rem; color:var(--muted); letter-spacing:.02em; }
 
-/* 指标行最右侧的「更新日期」：靠右对齐，字号略小，避免和四个数字抢视觉 */
+/* 指标行最右侧的「更新日期」：靠右、字号更小、浅灰，只作数据备注 */
 .metric-updated{ margin-left:auto; align-items:flex-end; text-align:right; }
 .metric-updated time{
-  font-size:1.02rem; font-weight:600; color:var(--ink-soft);
+  font-size:.82rem; font-weight:400; color:var(--faint);
   font-variant-numeric:tabular-nums; line-height:1.25;
 }
+.metric-updated span{ font-size:.74rem; color:var(--faint); letter-spacing:.02em; }
 
 /* ---------------- NAV ---------------- */
 .toc{
@@ -325,16 +327,6 @@ p{ margin:0 0 12px; }
   background:var(--bg-soft);
 }
 .skill p{ margin:0; font-size:.9rem; color:var(--ink-soft); }
-
-/* ---------------- FOOTER ---------------- */
-footer{
-  margin-top:40px;
-  padding-top:18px;
-  border-top:1px solid var(--line);
-  font-size:.83rem;
-  color:var(--muted);
-}
-footer p{ margin:0; }
 
 /* ---------------- RESPONSIVE ---------------- */
 @media (max-width:720px){
